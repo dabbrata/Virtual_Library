@@ -3,6 +3,10 @@
     if(isset($_REQUEST['item'])){
     $value = $_REQUEST['item'];
     }
+    else{
+        $value="s";
+    }
+   
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +37,12 @@
         .cards{
             display:flex;
             overflow:auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .r-cards{
+            display:flex;
+            flex-wrap:wrap;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
     </style>
 </head>
@@ -64,20 +74,80 @@
                        $uploadTime = $rows['upload_date'];
                        $uploaderEmail = $rows['email'];
                        $bookWriter = $rows['writer_name'];
-                echo '<div class="m-5">
-                             <div class="card crd" style="width: 14rem;">
-                             <img class="card-img-top" src="book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:200px;">
-                             <div class="card-body">
-                             <h5 class="card-title">'.$bookName.'</h5><p class="card-text">'.$bookWriter.'</p>
-                             <a href="#" class="btn btn-secondary"  id="person" style="opacity:.5;">Download</a>
-                             <a href="book_detail_page.php?detail='.$book_detail.'&cover='.$coverPhotoName.'&name='.$bookName.'&time='.$uploadTime.'&email='.$uploaderEmail.'&writer='.$bookWriter.'" class="btn btn-outline-secondary" style="margin-left:26px;">View</a>
-                             </div>
-                             </div>
-                             </div>';
+
+                       
+                       if(isset($_SESSION["profile"])){
+                        echo '<div class="m-5">
+                        <div class="card crd" style="width: 14rem;">
+                        <img class="card-img-top" src="book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:200px;">
+                        <div class="card-body">
+                        <h5 class="card-title">'.$bookName.'</h5><p class="card-text">'.$bookWriter.'</p>
+                        <a href="book_download.php?file='.$pdf_file.'" class="btn btn-secondary">Download</a>
+                        <a href="book_detail_page.php?detail='.$book_detail.'&cover='.$coverPhotoName.'&name='.$bookName.'&time='.$uploadTime.'&email='.$uploaderEmail.'&writer='.$bookWriter.'" class="btn btn-outline-secondary" style="margin-left:26px;">View</a>
+                        </div>
+                        </div>
+                        </div>';
+                        }
+                         else{
+                             echo '<div class="m-5">
+                        <div class="card crd" style="width: 14rem;">
+                        <img class="card-img-top" src="book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:200px;">
+                        <div class="card-body">
+                        <h5 class="card-title">'.$bookName.'</h5><p class="card-text">'.$bookWriter.'</p>
+                        <a href="#" class="btn btn-secondary"  id="person" style="opacity:.5;">Download</a>
+                        <a href="book_detail_page.php?detail='.$book_detail.'&cover='.$coverPhotoName.'&name='.$bookName.'&time='.$uploadTime.'&email='.$uploaderEmail.'&writer='.$bookWriter.'" class="btn btn-outline-secondary" style="margin-left:26px;">View</a>
+                        </div>
+                        </div>
+                        </div>';
+                         }
             }
             
         
         ?>
+        </div>
+        <br><br>
+        <h4>Related Books</h4><br>
+
+        <div class="r-cards">
+            <?php
+                 $search_sql = "SELECT * FROM book_info WHERE book_name LIKE '%$value%' ORDER BY book_name DESC";
+                 $runQuery  = mysqli_query($conn,$search_sql);
+                 while($rows = mysqli_fetch_array($runQuery))
+                 {
+                            $bookName = $rows['book_name'];
+                            $coverPhotoName = $rows['cover_photo_name'];
+                            $pdf_file = $rows['pdf_file_name'];
+                            $book_detail = $rows['details'];
+                            $uploadTime = $rows['upload_date'];
+                            $uploaderEmail = $rows['email'];
+                            $bookWriter = $rows['writer_name'];
+
+                            if(isset($_SESSION["profile"])){
+                                echo '<div class="m-5">
+                                <div class="card crd" style="width: 14rem;">
+                                <img class="card-img-top" src="book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:200px;">
+                                <div class="card-body">
+                                <h5 class="card-title">'.$bookName.'</h5><p class="card-text">'.$bookWriter.'</p>
+                                <a href="book_download.php?file='.$pdf_file.'" class="btn btn-secondary">Download</a>
+                                <a href="book_detail_page.php?detail='.$book_detail.'&cover='.$coverPhotoName.'&name='.$bookName.'&time='.$uploadTime.'&email='.$uploaderEmail.'&writer='.$bookWriter.'" class="btn btn-outline-secondary" style="margin-left:26px;">View</a>
+                                </div>
+                                </div>
+                                </div>';
+                            }
+                            else{
+                                echo '<div class="m-5">
+                           <div class="card crd" style="width: 14rem;">
+                           <img class="card-img-top" src="book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:200px;">
+                           <div class="card-body">
+                           <h5 class="card-title">'.$bookName.'</h5><p class="card-text">'.$bookWriter.'</p>
+                           <a href="#" class="btn btn-secondary"  id="person" style="opacity:.5;">Download</a>
+                           <a href="book_detail_page.php?detail='.$book_detail.'&cover='.$coverPhotoName.'&name='.$bookName.'&time='.$uploadTime.'&email='.$uploaderEmail.'&writer='.$bookWriter.'" class="btn btn-outline-secondary" style="margin-left:26px;">View</a>
+                           </div>
+                           </div>
+                           </div>';
+                            }
+                 }
+            ?>
         </div>
       </div>
     </div>

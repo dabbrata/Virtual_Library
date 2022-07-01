@@ -352,6 +352,7 @@
                 <p class="lead fw-normal mb-0">Your Uploaded books</p>
                 <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
               </div>
+              <hr>
               <div class="row g-2">
                 <div class="col mb-2 d-flex flex-wrap">
                   <!--<img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp" alt="image 1" class="w-100 rounded-3">-->

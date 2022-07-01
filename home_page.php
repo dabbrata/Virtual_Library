@@ -186,9 +186,9 @@
                         <h4>All Books</h4>
                         <div class="productMenu d-flex justify-content-end">
                             <a class="activate" href="#">All</a>
-                            <a href="#">Literature</a>
-                            <a href="#">Story</a>
-                            <a href="#">Poems</a>
+                            <a href="search_item_page.php">Cartoon</a>
+                            <a href="search_item_page.php">Action</a>
+                            <a href="search_item_page.php">Comics</a>
                         </div>
                     </div>
                     
@@ -199,7 +199,7 @@
         </div>
 
         
-             <div class="col mb-2 d-flex flex-wrap">
+             <div class="col mb-2 d-flex flex-wrap" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
 
                      <?php
                  
