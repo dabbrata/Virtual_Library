@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.topper {
+    width: 100%;
+    background: rgb(56, 41, 41);
+    padding: 10px;
+}
+
+.topper h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.topper h2 span {
+    color: red;
+}
+
+.txt {
+
+    margin: 4px 12px;
+    color: white !important;
+
+}
+
+.active {
+    border-bottom: 3px solid wheat;
+}
+
+.txt:hover {
+    border-bottom: 3px solid wheat;
+
+}
+
+.topper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconGrp {
+    display: flex;
+}
+
+.Icon {
+    color: wheat;
+    margin: 0 20px;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.Icon:hover {
+    color: thistle;
+}
+
+.srcBtn i {
+    color: wheat;
+}
+
+.itemSmall li:hover {
+    background-color: rgb(88, 245, 229);
+}
+
+
+.topBar {
+    background-color: #292b2c;
+}
+
+.header {
+    background-color: #212529;
+    z-index: 1;
+}
+.textColor a {
+    color: blanchedalmond;
+    border-bottom: 1px solid wheat;
+}
+
+.textColor .lastElement {
+    border-bottom: none;
+}
+
+
+
+
+.buton {
+    background: seashell;
+    padding: 3px 6px;
+}
+
+
+.accountBox {
+    height: 380px;
+    width: 260px;
+    background: rgba(0, 0, 0, 1);
+    margin-right: 50px;
+    border-radius: 10px;
+    margin-top: 5px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.color {
+    color: rgba(230, 222, 217, .9);
+}
+
+.iField {
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 1);
+    border: 1px solid gainsboro;
+}
+@media only screen and (max-width: 600px) {
+    
+    .accountBox {
+        height: 350px;
+        width: 250px;
+        background: rgba(0, 0, 0, 1);
+        margin-right: 20px;
+        border-radius: 8px;
+        margin-top: 5px;
+        display: none;
+        position: absolute;
+        z-index: 2;
+    }
+}

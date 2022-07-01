@@ -1,0 +1,17 @@
+//Dshboard-pass:dabbrata109
+Bugs.....
+
+1.if we want to take the book name by $_REQUEST global varibale
+  like "tom&jerry";
+  then the normal variable only store first part of name(tom) 
+  before & operator
+	
+  EXAMPLE:
+  home_page.php?name="tom&jerry";
+  $Name = $_REQUEST['name'];
+  echo $Name;
+  
+  OUTPUT: tom                  //to be output tom&jerry
+
+
+2.
