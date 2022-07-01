@@ -379,7 +379,7 @@
                          <div class="card-body">
                          <h5 class="card-title">'.$bookName.'</h5><p class="card-text">'.$bookWriter.'</p>
                          <a href="book_download.php?file='.$pdf_file.'" class="btn btn-success btn-sm" style="margin-left:2px;width:90px;">Download</a>
-                         <a href="book_delete.php?identity='.$id.'" class="btn btn-danger btn-sm" style="width:90px;" onClick="alert(`Do you want to delete this book?`)">Delete</a>
+                         <a href="book_delete.php?identity='.$id.'" class="btn btn-danger btn-sm" style="width:90px;">Delete</a>
                          <a href="book_detail_page.php?detail='.$book_detail.'&cover='.$coverPhotoName.'&name='.$bookName.'&time='.$uploadTime.'&email='.$uploaderEmail.'&writer='.$bookWriter.'" class="btn btn-outline-secondary btn-sm" style="width:183px; margin:7px 3px;">View</a>
                          </div>
                          </div>

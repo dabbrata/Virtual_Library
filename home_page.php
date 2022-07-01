@@ -10,7 +10,12 @@
          $email_address = $_REQUEST["email"];
          $_SESSION["profile"]= $profile;
          $_SESSION["email_address"] = $email_address;
+        
          
+     }
+     else if(isset($_REQUEST['dashboard']))
+     {
+         $_SESSION["dashboard"] = "dashboard";
      }
     
 
