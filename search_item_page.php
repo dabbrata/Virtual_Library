@@ -24,6 +24,17 @@
     <link rel="stylesheet" href="navandtopbarStyle.css">
 
     <title>Search</title>
+
+    <style>
+        .items{
+            display:flex;
+            flex-direction:column;
+        }
+        .cards{
+            display:flex;
+            overflow:auto;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -32,19 +43,42 @@
 
     <div class="container">
     <div class="items">
+        <div class="itm">
+        <br>
         <h4>Search items</h4>
         <hr>
-
+        </div>
+        <div class="cards">
         <?php
             include("dbconnection.php");
 
 
-            $search_sql = "SELECT * FROM book_info LIKE '$value'";
+            $search_sql = "SELECT * FROM book_info WHERE book_name LIKE '%$value%'";
             $runQuery  = mysqli_query($conn,$search_sql);
+            while($rows = mysqli_fetch_array($runQuery))
+            {
+                       $bookName = $rows['book_name'];
+                       $coverPhotoName = $rows['cover_photo_name'];
+                       $pdf_file = $rows['pdf_file_name'];
+                       $book_detail = $rows['details'];
+                       $uploadTime = $rows['upload_date'];
+                       $uploaderEmail = $rows['email'];
+                       $bookWriter = $rows['writer_name'];
+                echo '<div class="m-5">
+                             <div class="card crd" style="width: 14rem;">
+                             <img class="card-img-top" src="book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:200px;">
+                             <div class="card-body">
+                             <h5 class="card-title">'.$bookName.'</h5><p class="card-text">'.$bookWriter.'</p>
+                             <a href="#" class="btn btn-secondary"  id="person" style="opacity:.5;">Download</a>
+                             <a href="book_detail_page.php?detail='.$book_detail.'&cover='.$coverPhotoName.'&name='.$bookName.'&time='.$uploadTime.'&email='.$uploaderEmail.'&writer='.$bookWriter.'" class="btn btn-outline-secondary" style="margin-left:26px;">View</a>
+                             </div>
+                             </div>
+                             </div>';
+            }
             
         
         ?>
-        
+        </div>
       </div>
     </div>
 
