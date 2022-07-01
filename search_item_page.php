@@ -76,7 +76,7 @@
                        $bookWriter = $rows['writer_name'];
 
                        
-                       if(isset($_SESSION["profile"])){
+                       if(isset($_SESSION["profile"]) || isset($_SESSION["dashboard"])){
                         echo '<div class="m-5">
                         <div class="card crd" style="width: 14rem;">
                         <img class="card-img-top" src="book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:200px;">
@@ -122,7 +122,7 @@
                             $uploaderEmail = $rows['email'];
                             $bookWriter = $rows['writer_name'];
 
-                            if(isset($_SESSION["profile"])){
+                            if(isset($_SESSION["profile"]) || isset($_SESSION["dashboard"])){
                                 echo '<div class="m-5">
                                 <div class="card crd" style="width: 14rem;">
                                 <img class="card-img-top" src="book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:200px;">

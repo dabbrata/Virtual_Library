@@ -1,6 +1,6 @@
 <?php
     session_start();
-     if(isset($_SESSION["profile"])){ 
+     if(isset($_SESSION["profile"]) || isset($_SESSION["dashboard"])){ 
         session_destroy();
         header("Location:login_page.php");
     }

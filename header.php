@@ -13,7 +13,7 @@
                 <div class="signinup;" style="color:white; margin-right:10px;">
                     <?php
                         $bool = true;
-                        if(isset($_REQUEST['dashboard']))
+                        if(isset($_REQUEST['dashboard']) || isset($_SESSION['dashboard']))
                         {
                             echo '<a style="color:wheat;text-decoration:none;" href="Sidebar-menu/index.php">DASHBOARD</a>'.'  |  '.'<a style="color:wheat;text-decoration:none;" href="login_page.php?logout=log out">LOGOUT</a>';
                         }

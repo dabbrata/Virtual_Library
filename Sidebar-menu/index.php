@@ -1,6 +1,8 @@
 <!-- Coding by CodingLab | www.codinglabweb.com -->
 <?php
     include("../dbconnection.php");
+    session_start();
+    $_SESSION['dashboard'] = "dashboard";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +102,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="#user_id">
                             <i class='bx bx-wallet icon' ></i>
                             <span class="text nav-text">Users</span>
                         </a>
@@ -113,7 +115,7 @@
                 <li class="">
                     <a href="../home_page.php">
                         <i class='bx bx-log-out icon' ></i>
-                        <span class="text nav-text">Logout</span>
+                        <span class="text nav-text">Exit</span>
                     </a>
                 </li>
 
@@ -254,7 +256,7 @@
                </script>
             </div>
         </div>
-        <div class="alluser m-4">
+        <div class="alluser m-4" id="userd_id">
         <div class="text" style=" padding:0px;margin-left:4px; font-size:25px;">All Users</div>
             <div class="row">
              <div class="alldata">
@@ -288,7 +290,7 @@
                              <td>'.$rows["lname"].'</td>
                              <td>'.$rows["email"].'</td>
                              <td>'.$upload_books.'</td>
-                             <td><a href="#u"><button type="button" class="btn btn-primary">Check</button></a></td>
+                             <td><a href="index.php?check='.$rows["email"].'"><button type="button" class="btn btn-primary">Check</button></a></td>
                              <td><a href="delete_from_admin.php?email='.$f_email.'" onClick="alert(`Do you want to delete this user?`)"><button type="button" class="btn btn-secondary">Delete</button></a></td>
                              </tr>';
                              echo "<br>";
@@ -305,6 +307,53 @@
             </div>  
             
 
+        </div>
+
+        <div class="details_book ">
+            <div class="title">
+               <?php
+                     if(isset($_REQUEST['check'])){
+                        
+                        echo " <div class='text' style=' padding:0px;margin-left:24px; font-size:25px;margin-bottom:5px;'><span style='font-size:15px;'>These books are uploaded from, <br></span>".$_REQUEST['check']."</div>";
+                     }
+               ?>
+            </div>
+            <div class="book_info d-flex bg-secondary justify-content-start" style="width:97%;margin-left:25px;">
+            <div class="books d-flex flex-wrap" style="width:95%;">
+            <?php
+                    if(isset($_REQUEST['check']))
+                    {
+                       $email = $_REQUEST['check'];  
+                       $sql = "SELECT * FROM book_info WHERE email = '$email'";
+                       $runQuery = mysqli_query($conn,$sql);
+
+                       while($rows = mysqli_fetch_array($runQuery))
+                       {
+                         $bookName = $rows['book_name'];
+                         $coverPhotoName = $rows['cover_photo_name'];
+                         $pdf_file = $rows['pdf_file_name'];
+                         $book_detail = $rows['details'];
+                         $uploadTime = $rows['upload_date'];
+                         $uploaderEmail = $rows['email'];
+                         $bookWriter = $rows['writer_name'];
+                         $id = $rows['id'];
+     
+                         echo '<div class="m-3">
+                              <div class="card crd" style="width: 14rem;">
+                              <img class="card-img-top" src="../book_images/'.$coverPhotoName.'" alt="Cover image cap" style="height:210px;">
+                              <div class="card-body">
+                              <h5 class="card-title">'.$bookName.'</h5><p class="card-text">'.$bookWriter.'</p>
+                              <a href="../book_download.php?file='.$pdf_file.'" class="btn btn-success btn-sm" style="margin-left:2px;width:90px;">Download</a>
+                              <a href="../book_delete.php?identity='.$id.'" class="btn btn-danger btn-sm" style="width:90px;" onClick="alert(`Do you want to delete this book?`)">Delete</a>
+                              <a href="../book_detail_page.php?detail='.$book_detail.'&cover='.$coverPhotoName.'&name='.$bookName.'&time='.$uploadTime.'&email='.$uploaderEmail.'&writer='.$bookWriter.'" class="btn btn-outline-secondary btn-sm" style="width:183px; margin:7px 3px;">View</a>
+                              </div>
+                              </div>
+                              </div>';
+                       }
+                    }
+                ?>
+                </div>
+            </div>
         </div>
         
         
