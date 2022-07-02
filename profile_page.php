@@ -368,7 +368,8 @@
                     $coverPhotoName = $rows['cover_photo_name'];
                     $pdf_file = $rows['pdf_file_name'];
                     $book_detail = $rows['details'];
-                    $uploadTime = $rows['upload_date'];
+                    $timestamp = $rows['upload_date'];
+                    $uploadTime = date('M d, Y'.' (h : i A)',strtotime($timestamp));
                     $uploaderEmail = $rows['email'];
                     $bookWriter = $rows['writer_name'];
                     $id = $rows['id'];

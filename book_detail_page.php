@@ -120,8 +120,8 @@
                     <h3><?php echo $bookName ?></h3>
                     <h5>Written by "<?php echo $writerName;?>"</h5>
                     <p style="color:rgba(0,0,0,0.6);">
-                    Uploaded At <?php echo $uploadTime ?><br>
-                    Uploader Email : <?php echo $uploaderEmail ?>
+                    Uploaded :<span style="color:black;font-weight:500;"> <?php echo $uploadTime ?></span><br>
+                    Uploader Email : <span style="color:black;font-weight:500;"><?php echo $uploaderEmail ?></span>
                     </p>
                     <br>
                     <p class="lead fw-normal mb-1">About</p>
