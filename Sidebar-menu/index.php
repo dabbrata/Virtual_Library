@@ -4,6 +4,8 @@
     session_start();
     $_SESSION['dashboard'] = "dashboard";
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +43,7 @@
     </style>
 </head>
 <body>
+
     <nav class="sidebar open">
         <header>
             <div class="image-text">
@@ -135,6 +138,8 @@
         </div>
 
     </nav>
+
+    
 
     <section class="home">
         <div class="text m-4" style=" padding:0px; margin-top:0px !important;"><span style="font-size:20px;">Welcome to </span>Virtual Library</div>
@@ -257,6 +262,7 @@
             </div>
         </div>
         <div class="alluser m-4" id="userd_id">
+       
         <div class="text" style=" padding:0px;margin-left:4px; font-size:25px;">All Users</div>
             <div class="row">
              <div class="alldata">

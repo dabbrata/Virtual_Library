@@ -4,6 +4,7 @@
         session_destroy();
         header("Location:login_page.php");
     }
+   
        
 ?>
 <!DOCTYPE html>

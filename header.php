@@ -1,4 +1,6 @@
-
+<?php
+    include("session_timeout.php");
+?>
 <div class="topBar" id="topId">
         <div class="container">
             <div class="topper">
@@ -15,11 +17,15 @@
                         $bool = true;
                         if(isset($_REQUEST['dashboard']) || isset($_SESSION['dashboard']))
                         {
+                                        
                             echo '<a style="color:wheat;text-decoration:none;" href="Sidebar-menu/index.php">DASHBOARD</a>'.'  |  '.'<a style="color:wheat;text-decoration:none;" href="login_page.php?logout=log out">LOGOUT</a>';
                         }
                         else{
                         //extra logic
+
                         if(isset($_SESSION["profile"])){
+
+                            
                             echo '<a style="color:wheat;text-decoration:none;" href="profile_page.php?profile_name=profile_pic">'.$_SESSION["profile"].'</a>'.'  |  '.'<a style="color:wheat;text-decoration:none;" href="login_page.php?logout=log out">LOGOUT</a>';
                         }
                         else{

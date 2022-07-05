@@ -14,4 +14,4 @@ Bugs.....
   OUTPUT: tom                  //to be output tom&jerry
 
 
-2.
+2.reminder: the session is time out after specific time , which is applied in "header.php,   header2.php,   profile_page.php" i.e for only for users only;

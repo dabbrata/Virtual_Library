@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include('dbconnection.php');
 if(isset($_REQUEST["email"]) && isset($_REQUEST["password"])){
@@ -23,15 +24,17 @@ while($rows = mysqli_fetch_array($runQuerySeen)){
         
 }
 if($dash != 0){
-        
+       
     header("Location:home_page.php?dashboard=dashboard page");
         
     }
 else{
-    if($count == 0){
+    if($count == 0){    
     header("Location:login_page.php?incorrect=Email and password are incorrect");
     }
     else {
+    $start_time = time();//this for session time out after specific time log out happened
+    $_SESSION['hold'] = $start_time;//this for session time out after specific time log out happened
     header("Location:home_page.php?profile_name=$first_name&email=$email");
     }
 

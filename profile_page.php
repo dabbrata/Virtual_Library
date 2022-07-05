@@ -9,6 +9,9 @@
   $email_address = $_SESSION["email_address"];
   
 ?>
+<?php
+    include("session_timeout.php");
+?>
 
 <?php
 

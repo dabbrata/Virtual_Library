@@ -10,6 +10,7 @@
          $email_address = $_REQUEST["email"];
          $_SESSION["profile"]= $profile;
          $_SESSION["email_address"] = $email_address;
+         
         
          
      }
@@ -20,6 +21,9 @@
     
 
 ?>
+
+
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -141,7 +145,6 @@
    <?php
    include("header.php");
    ?>
-
 
 
     <div class="container">
