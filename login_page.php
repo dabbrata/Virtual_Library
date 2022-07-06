@@ -126,7 +126,7 @@
                             <!-- check me for remember  -->
                             <div class="form-check">
                               <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
-                              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                             </div>
 
                             <br>
