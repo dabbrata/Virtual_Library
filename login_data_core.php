@@ -33,6 +33,13 @@ else{
     header("Location:login_page.php?incorrect=Email and password are incorrect");
     }
     else {
+
+        if(isset($_REQUEST['remember'])){
+            setcookie('email',$email,time()+60*60*7);
+            setcookie('pass',$_REQUEST['password'],time()+60*60*7);
+            
+        }    
+
     $start_time = time();//this for session time out after specific time log out happened
     $_SESSION['hold'] = $start_time;//this for session time out after specific time log out happened
     header("Location:home_page.php?profile_name=$first_name&email=$email");

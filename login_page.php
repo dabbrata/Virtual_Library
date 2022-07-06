@@ -7,6 +7,7 @@
    
        
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,8 +105,8 @@
 
                             <!-- Email input -->
                             <div class="form-outline mb-2">
-                                <label class="form-label" for="form3Example3">Email address</label>
-                                <input type="email" id="form3Example3" name="email" class="form-control" required />
+                                <label class="form-label" for="email">Email address</label>
+                                <input type="email" id="email" name="email" class="form-control" value="" required />
 
                             </div>
 
@@ -114,7 +115,7 @@
 
                                 <label class="form-label" for="password">Password</label>
                                 <div class="input-group">
-                                <input type="password" id="password" name="password" class="form-control" required />
+                                <input type="password" id="password" name="password" class="form-control" value="" required />
                                 <span class="input-group-text">
                                     <i class="fa fa-eye" id="togglePassword" 
                                    style="cursor: pointer"></i>
@@ -122,6 +123,12 @@
                                 </div>
 
                             </div>
+                            <!-- check me for remember  -->
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
+                              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+
                             <br>
                             <?php
                             if(isset($_REQUEST['incorrect'])){
@@ -223,6 +230,20 @@
 </body>
 
 </html>
+
+
+<!-- to find id,,this code will be given last here -->
+
+<?php
+    if(isset($_COOKIE['email']) && isset($_COOKIE['pass'])){
+        $email = $_COOKIE['email'];
+        $pass = $_COOKIE['pass'];
+        echo "<script>
+                document.getElementById('email').value = '$email' ;
+                document.getElementById('password').value = '$pass';
+             </script>";
+    }
+?>
 
 
 
