@@ -35,8 +35,8 @@ else{
     else {
 
         if(isset($_REQUEST['remember'])){
-            setcookie('email',$email,time()+60*60*7);
-            setcookie('pass',$_REQUEST['password'],time()+60*60*7);
+            setcookie('email',$email,time()+60*60*24*7);
+            setcookie('pass',$_REQUEST['password'],time()+60*60*24*7);
             
         }    
 
