@@ -5,6 +5,7 @@ include('dbconnection.php');
 if(isset($_REQUEST["email"]) && isset($_REQUEST["password"])){
 
 $email = $_REQUEST["email"];
+
 $password = md5($_REQUEST["password"]);
 
 //find all data especially email and password from database for checking existance of those data//

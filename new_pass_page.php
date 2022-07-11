@@ -76,7 +76,7 @@
 
               <label class="form-label" for="password">New Password</label>
               <div class="input-group">
-                    <input type="password" id="password" class="form-control" name="new_password" required />
+                    <input type="password" id="password" pattern=".{6,}" title="Minimun 6 characters required!" class="form-control" name="new_password" required />
                     <span class="input-group-text">
                             <i class="fa fa-eye" id="togglePassword" 
                             style="cursor: pointer"></i>
@@ -88,7 +88,7 @@
 
               <label class="form-label" for="con_password">Confirm Password</label>
               <div class="input-group">
-                   <input type="password" id="con_password" class="form-control confirm_pass" name="confirm_password" required />
+                   <input type="password" id="con_password" pattern=".{6,}" title="Minimun 6 characters required!" class="form-control confirm_pass" name="confirm_password" required />
                     <span class="input-group-text">
                             <i class="fa fa-eye" id="togglePassword2" 
                             style="cursor: pointer"></i>

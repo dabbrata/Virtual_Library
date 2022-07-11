@@ -7,6 +7,7 @@ if(isset($_REQUEST["fname"]) && isset($_REQUEST["lname"]) && isset($_REQUEST["pa
 
 $first_name = $_REQUEST["fname"];
 $last_name = $_REQUEST["lname"];
+
 $password = md5($_REQUEST["password"]);
 
 //find all data especially email from database for checking duplicate email existed or not,if not existed then insert all data to database table..//
@@ -21,7 +22,7 @@ while($rows = mysqli_fetch_array($runQuerySeen)){
         
 }
 if($count == 0){
-        
+
     $insertQuery = "INSERT INTO user_info (fname,lname,email,password) VALUES ('$first_name','$last_name','$email','$password')";
     $runQuery = mysqli_query($conn,$insertQuery);
     if($runQuery)

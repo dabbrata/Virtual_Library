@@ -120,7 +120,7 @@
 
                                 <label class="form-label" for="password">Password</label>
                                 <div class="input-group">
-                                <input type="password" id="password" class="form-control" name="password" required/>
+                                <input type="password" id="password" pattern=".{6,}" title="Minimun 6 characters required!" class="form-control" name="password" required/>
                                 <span class="input-group-text">
                                     <i class="fa fa-eye" id="togglePassword" 
                                    style="cursor: pointer"></i>
@@ -147,6 +147,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                 </div>';
                             }
+        
 
                             ?>
 
