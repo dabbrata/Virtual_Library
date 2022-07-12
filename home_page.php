@@ -10,6 +10,8 @@
          $email_address = $_REQUEST["email"];
          $_SESSION["profile"]= $profile;
          $_SESSION["email_address"] = $email_address;
+
+         //$_SESSION['download'] = 0;
          
         
          
@@ -19,6 +21,7 @@
          $_SESSION["dashboard"] = "dashboard";
      }
     
+     
 
 ?>
 

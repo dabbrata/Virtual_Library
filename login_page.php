@@ -234,7 +234,6 @@
 
 
 <!-- to find id,,this code will be given last here -->
-
 <?php
     if(isset($_COOKIE['email']) && isset($_COOKIE['pass'])){
         $email = $_COOKIE['email'];

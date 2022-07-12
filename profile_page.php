@@ -280,16 +280,26 @@
             </div>
             <div class="p-4 text-black" style="background-color: #f8f9fa;">
               <div class="d-flex justify-content-end text-center py-1">
+                <?php
+                    $sql = "SELECT * FROM book_info WHERE email = '$email_address'";
+                    $runQuery = mysqli_query($conn,$sql);
+                    $uploaded_books = mysqli_num_rows($runQuery);
+
+                    $sqlTot = "SELECT * FROM book_info";
+                    $runQueryTot = mysqli_query($conn,$sqlTot);
+                    $total_books = mysqli_num_rows($runQueryTot);
+
+                ?>
                 <div>
-                  <p class="mb-1 h5">253</p>
+                  <p class="mb-1 h5"><?php echo $total_books; ?></p>
                   <p class="small text-muted mb-0">Books</p>
                 </div>
                 <div class="px-3">
-                  <p class="mb-1 h5">1026</p>
+                  <p class="mb-1 h5"><?php echo $_SESSION['download']; ?></p>
                   <p class="small text-muted mb-0">Downloads</p>
                 </div>
                 <div>
-                  <p class="mb-1 h5">478</p>
+                  <p class="mb-1 h5"><?php echo $uploaded_books; ?></p>
                   <p class="small text-muted mb-0">Uploads</p>
                 </div>
               </div>
