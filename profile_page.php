@@ -295,7 +295,7 @@
                   <p class="small text-muted mb-0">Books</p>
                 </div>
                 <div class="px-3">
-                  <p class="mb-1 h5"><?php echo $_SESSION['download']; ?></p>
+                  <p class="mb-1 h5">850</p>
                   <p class="small text-muted mb-0">Downloads</p>
                 </div>
                 <div>

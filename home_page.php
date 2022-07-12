@@ -1,7 +1,7 @@
 
 <?php
      session_start();
-
+     
      
      if(isset($_REQUEST['profile_name']) && isset($_REQUEST['email']) && !empty($_REQUEST['profile_name']))
      {
@@ -10,10 +10,7 @@
          $email_address = $_REQUEST["email"];
          $_SESSION["profile"]= $profile;
          $_SESSION["email_address"] = $email_address;
-
-         //$_SESSION['download'] = 0;
-         
-        
+ 
          
      }
      else if(isset($_REQUEST['dashboard']))

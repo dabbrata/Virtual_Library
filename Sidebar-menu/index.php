@@ -190,7 +190,7 @@
             <div class="col-12 col-lg-2 bg-white rounded p-4 m-2 d-flex justify-content-start flex-column" style="border-bottom:3px solid purple;margin: 10px 0 !important;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
                 <p style="color:gray;">Downloads</p>
                 <h5>
-                    <?php
+                    <?php                
                         $tot_downloads = 850;
                         echo $tot_downloads;
                     ?>
