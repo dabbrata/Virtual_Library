@@ -30,7 +30,7 @@
                             echo '<a style="color:wheat;text-decoration:none;" href="profile_page.php?profile_name=profile_pic">'.$_SESSION["profile"].'</a>'.'  |  '.'<a style="color:wheat;text-decoration:none;" href="login_page.php?logout=log out">LOGOUT</a>';
                         }
                         else{
-                            echo '<a style="color:wheat;text-decoration:none;" href="signup_page.php">Create Account </a>  |  <a style="color:wheat;text-decoration:none;" href="login_page.php"> Sign in</a>';
+                            echo '<a style="color:wheat;text-decoration:none; margin:0 15px;" href="signup_page.php">Create Account </a>  |  <a style="color:wheat;text-decoration:none;margin-left:15px;" href="login_page.php"> Sign in</a>';
                         }
                         }
                         

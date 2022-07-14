@@ -227,7 +227,9 @@
         this.classList.toggle('fa-eye');
         this.classList.toggle('fa-eye-slash');
        });
-    </script>  
+ 
+    </script> 
+    
 </body>
 
 </html>
