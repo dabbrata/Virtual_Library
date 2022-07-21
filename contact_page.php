@@ -28,7 +28,8 @@
            font-weight: 600;
        }
        .border{
-           border:1px solid rgb(13, 17, 73) !important;
+           /* border:1px solid rgb(13, 17, 73) !important; */
+           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
        }
        .area{
             display:flex;
@@ -37,7 +38,8 @@
        }
        .contact{
            margin:10px;
-           border:1px solid rgba(13, 17, 73,.5);
+           /* border:1px solid rgba(13, 17, 73,.5); */
+           box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
            padding:35px;
            border-radius:5px;
            width:40%;
@@ -56,7 +58,16 @@
            color: rgb(42, 13, 63);
            font-weight: bold;
        }
-        
+       @media only screen and (max-width: 1000px) {
+         .contact {
+           width:60%;
+         }
+       }
+       @media only screen and (max-width: 600px) {
+         .contact {
+           width:90%;
+         }
+       }
     </style>
 </head>
 <body>
@@ -65,20 +76,22 @@
     ?>
 
     <div class="area">
-    <div class="contact">
+    <div class="contact" style="margin-top:20px;">
     <form action="https://formspree.io/f/mwkalnpd" method="POST" id="my-form">
 
      <h2>Contact with us</h2>
      <br>   
-     <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" height="18px" width="21px"> 
+     <div class="name">
 
-     
+     <div class="cont">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" height="18px" width="21px"> 
      Username
      <div class="input-group">
          <span class="input-group-text border">First and last name</span>
          <input type="text" aria-label="First name" name="first-name" class="form-control border" required>
          <input type="text" aria-label="Last name" name="last-name" class="form-control border" required>
        </div><br>
+     </div>
      <div class="mb-1">
          <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/envelope-512.png" height="18px" width="21px">
          Email address
@@ -92,6 +105,7 @@
        <div class="d-grid gap-2">
          <button class="btn btn-primary backgroundColor" type="submit">Submit</button>
        <div id="my-form-status">
+     </div>
 
        </div>  
    </div>

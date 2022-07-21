@@ -223,8 +223,8 @@
                                 <a class="nav-link txt" href="#" tabindex="-1" aria-disabled="true">Contact</a>
                             </li>
                         </ul>
-                        <form class="d-flex srcBtn">
-                            <input class="form-control me-2"" type=" search" placeholder="Search" aria-label="Search">
+                        <form class="d-flex srcBtn" action="search_item_page.php" method="POST">
+                            <input class="form-control me-2"" type="search"  placeholder="Search" name="item" aria-label="Search">
                             <button class="btn btn-outline-success " type="submit"><i class="bi bi-search"></i></button>
                         </form>
                     </div>
@@ -308,7 +308,7 @@
               <div class="mb-4">
                 <p class="lead fw-normal mb-1">About</p>
                 <div class="p-4" style="background-color: #f8f9fa;">
-                  <p class="font-italic mb-1">Hello,name this is your profile page from where you can manupulate your library books.</p>
+                  <p class="font-italic mb-1">Hello <?php echo $profile; ?>, this is your profile page from where you can manupulate your library books.</p>
                 </div>
               </div>
 

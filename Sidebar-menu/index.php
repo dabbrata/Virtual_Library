@@ -37,8 +37,19 @@
             margin-left:60px;
             
         }
+        .row{
+            margin-right:50px;
+            margin-left:3px;
+            
+        }
+        .table{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background:white;
+        }
+        .table th,td{
+            padding:15px !important;
+        }
         
-       
         
     </style>
 </head>
@@ -138,8 +149,6 @@
         </div>
 
     </nav>
-
-    
 
     <section class="home">
         <div class="text m-4" style=" padding:0px; margin-top:0px !important;"><span style="font-size:20px;">Welcome to </span>Virtual Library</div>
@@ -263,11 +272,11 @@
         </div>
         <div class="alluser m-4" id="userd_id">
        
-        <div class="text" style=" padding:0px;margin-left:4px; font-size:25px;">All Users</div>
+         <div class="text" style="padding:0;margin-left:4px;margin-top:30px; font-size:25px;">All Users</div><br>
             <div class="row">
-             <div class="alldata">
+             
               <table class="table" style="text-align:center;">
-                <thead class="thead-dark">
+                <thead class="bg-dark" style="color:white;">
                  <tr>
                     <th scope="col">Id</th>
                     <th scope="col">First Name</th>
@@ -280,10 +289,8 @@
                 </thead>
                 <tbody>
                 <?php
-
                 $myQueryShow = "SELECT * FROM user_info";
                 $runQuerySeen = mysqli_query($conn, $myQueryShow);
-
                 while($rows = mysqli_fetch_array($runQuerySeen)){
                     if($rows["dashboard"] != 109){
                        $f_email = $rows["email"];
@@ -308,7 +315,7 @@
                 
               </table>
 
-              </div>
+              
               
             </div>  
             
